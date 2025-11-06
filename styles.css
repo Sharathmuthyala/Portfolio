@@ -556,6 +556,149 @@ section {
 }
 
 /* ===================================
+   Experience Section
+   =================================== */
+.experience {
+    background: var(--surface);
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 80px;
+    padding-bottom: var(--spacing-3xl);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 19px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-full);
+    background: var(--gradient);
+    box-shadow: 0 0 0 4px var(--surface), 0 0 0 8px var(--surface-variant);
+    z-index: 1;
+}
+
+.timeline-content {
+    background: var(--surface-variant);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
+
+.timeline-content:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-lg);
+}
+
+.experience-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    margin-bottom: var(--spacing-xs);
+}
+
+.experience-company {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+.experience-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+.experience-date {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--on-surface);
+    background: var(--surface);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.experience-location {
+    font-size: 0.813rem;
+    color: var(--on-surface-variant);
+    white-space: nowrap;
+}
+
+.experience-description {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.experience-description li {
+    color: var(--on-surface-variant);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.experience-description li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.exp-tag {
+    padding: 6px 14px;
+    background: var(--surface);
+    border-radius: var(--radius-full);
+    font-size: 0.813rem;
+    font-weight: 500;
+    color: var(--primary);
+    border: 1px solid var(--primary-light);
+    transition: var(--transition-fast);
+}
+
+.exp-tag:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===================================
    Projects Section
    =================================== */
 .projects {
@@ -840,6 +983,31 @@ section {
     .hero {
         padding: var(--spacing-2xl) var(--spacing-md);
     }
+
+    .experience-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .experience-meta {
+        align-items: flex-start;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-marker {
+        left: 4px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-content {
+        padding: var(--spacing-lg);
+    }
 }
 
 @media (max-width: 480px) {
@@ -863,6 +1031,19 @@ section {
 
     .project-card {
         padding: var(--spacing-lg);
+    }
+
+    .experience-title {
+        font-size: 1.25rem;
+    }
+
+    .experience-company {
+        font-size: 1rem;
+    }
+
+    .experience-date,
+    .experience-location {
+        font-size: 0.813rem;
     }
 }
 

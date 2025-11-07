@@ -654,22 +654,38 @@ section {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
+    padding: var(--spacing-lg) 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 30px;
+    left: 40px;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+    width: 4px;
+    background: linear-gradient(180deg, var(--secondary) 0%, var(--secondary-light) 50%, var(--primary) 100%);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
 }
 
 .timeline-item {
     position: relative;
-    padding-left: 80px;
+    padding-left: 100px;
     padding-bottom: var(--spacing-3xl);
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.3s;
 }
 
 .timeline-item:last-child {
@@ -678,14 +694,36 @@ section {
 
 .timeline-marker {
     position: absolute;
-    left: 19px;
-    top: 4px;
-    width: 24px;
-    height: 24px;
+    left: 26px;
+    top: 8px;
+    width: 32px;
+    height: 32px;
     border-radius: var(--radius-full);
     background: var(--gradient-secondary);
-    box-shadow: 0 0 0 4px var(--surface), 0 0 0 8px var(--surface-variant);
-    z-index: 1;
+    box-shadow: 0 0 0 6px var(--surface),
+                0 0 0 10px rgba(212, 175, 55, 0.2),
+                0 4px 12px rgba(212, 175, 55, 0.4);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-emphasized);
+}
+
+.timeline-marker::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--on-secondary);
+    border-radius: var(--radius-full);
+    opacity: 0.8;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px var(--surface),
+                0 0 0 10px rgba(212, 175, 55, 0.3),
+                0 6px 16px rgba(212, 175, 55, 0.5);
 }
 
 .timeline-content {
@@ -1104,15 +1142,23 @@ section {
     }
 
     .timeline::before {
-        left: 15px;
+        left: 20px;
+        width: 3px;
     }
 
     .timeline-marker {
-        left: 4px;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .timeline-marker::before {
+        width: 8px;
+        height: 8px;
     }
 
     .timeline-item {
-        padding-left: 50px;
+        padding-left: 60px;
     }
 
     .timeline-content {

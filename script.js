@@ -20,7 +20,7 @@ navLinks.forEach(link => {
 });
 
 // ===================================
-// Navbar Scroll Effect
+// Material 3 Navbar Scroll Effect with Elevation
 // ===================================
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
@@ -28,11 +28,13 @@ let lastScroll = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    // Add shadow when scrolled
+    // Material 3 elevation change on scroll
     if (currentScroll > 0) {
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 4px 8px rgba(11, 29, 57, 0.1), 0 6px 12px rgba(11, 29, 57, 0.08)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
     } else {
-        navbar.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.05)';
+        navbar.style.boxShadow = '0 1px 2px rgba(11, 29, 57, 0.08), 0 1px 3px rgba(11, 29, 57, 0.04)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
     }
 
     lastScroll = currentScroll;
@@ -155,7 +157,7 @@ function createScrollProgress() {
     progressBar.style.top = '0';
     progressBar.style.left = '0';
     progressBar.style.height = '3px';
-    progressBar.style.background = 'linear-gradient(135deg, #4285F4 0%, #34A853 100%)';
+    progressBar.style.background = 'linear-gradient(135deg, #D4AF37 0%, #e5c766 100%)';
     progressBar.style.width = '0%';
     progressBar.style.zIndex = '9999';
     progressBar.style.transition = 'width 0.1s ease-out';
@@ -187,7 +189,7 @@ function createBackToTop() {
     backToTopBtn.style.width = '50px';
     backToTopBtn.style.height = '50px';
     backToTopBtn.style.borderRadius = '50%';
-    backToTopBtn.style.background = 'linear-gradient(135deg, #4285F4 0%, #34A853 100%)';
+    backToTopBtn.style.background = 'linear-gradient(135deg, #D4AF37 0%, #e5c766 100%)';
     backToTopBtn.style.color = 'white';
     backToTopBtn.style.border = 'none';
     backToTopBtn.style.fontSize = '24px';
@@ -250,7 +252,7 @@ function createThemeToggle() {
     themeToggle.style.width = '50px';
     themeToggle.style.height = '50px';
     themeToggle.style.borderRadius = '50%';
-    themeToggle.style.background = 'linear-gradient(135deg, #4285F4 0%, #34A853 100%)';
+    themeToggle.style.background = 'linear-gradient(135deg, #D4AF37 0%, #e5c766 100%)';
     themeToggle.style.color = 'white';
     themeToggle.style.border = 'none';
     themeToggle.style.fontSize = '24px';
@@ -324,7 +326,7 @@ function showToast(message, duration = 3000) {
     toast.style.bottom = '100px';
     toast.style.right = '30px';
     toast.style.padding = '16px 24px';
-    toast.style.background = 'linear-gradient(135deg, #4285F4 0%, #34A853 100%)';
+    toast.style.background = 'linear-gradient(135deg, #D4AF37 0%, #e5c766 100%)';
     toast.style.color = 'white';
     toast.style.borderRadius = '24px';
     toast.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
@@ -386,5 +388,5 @@ window.addEventListener('afterprint', () => {
 // ===================================
 // Console Message
 // ===================================
-console.log('%cWelcome to my portfolio!', 'color: #4285F4; font-size: 20px; font-weight: bold;');
-console.log('%cInterested in the code? Check out my GitHub: https://github.com/Sharathmuthyala', 'color: #34A853; font-size: 14px;');
+console.log('%cWelcome to my portfolio!', 'color: #D4AF37; font-size: 20px; font-weight: bold;');
+console.log('%cInterested in the code? Check out my GitHub: https://github.com/Sharathmuthyala', 'color: #0B1D39; font-size: 14px;');

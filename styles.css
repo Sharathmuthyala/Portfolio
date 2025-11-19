@@ -10,12 +10,12 @@
     --primary-dark: #050f1f;
     --on-primary: #FFFFFF;
 
-    /* Secondary - Gold (Expressive Accent) */
-    --secondary: #D4AF37;
-    --secondary-container: #e5c766;
-    --secondary-light: #e0c05c;
-    --secondary-dark: #b8941f;
-    --on-secondary: #0B1D39;
+    /* Secondary - Grey (Expressive Accent) */
+    --secondary: #6c757d;
+    --secondary-container: #d6d8db;
+    --secondary-light: #949ba2;
+    --secondary-dark: #494f54;
+    --on-secondary: #ffffff;
 
     /* Tertiary - Soft Cool White */
     --tertiary: #F2F4F7;
